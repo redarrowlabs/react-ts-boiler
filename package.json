@@ -19,6 +19,7 @@
   },
   "scripts": {
     "dev": "webpack-dashboard -p 3001 -- node server.js",
+    "release": "webpack --config webpack.release.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
