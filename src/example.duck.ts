@@ -1,5 +1,5 @@
 //https://github.com/erikras/ducks-modular-redux
-import { Dispatch } from 'redux';
+import { Dispatch, Action } from 'redux';
 import { GetState } from './store';
 import { fetchMyRemoteResource } from './hub';
 
@@ -51,7 +51,7 @@ export function handleClick() {
 }
 
 export function getRemoteResource() {
-    return async (dispatch: Dispatch<string>, getState: GetState) => {
+    return async (dispatch: Dispatch<Action>, getState: GetState) => {
         dispatch(getRemoteResourcePending());
 
         //Wait on something promise based to finish.
