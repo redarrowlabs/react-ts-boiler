@@ -1,29 +1,47 @@
 import * as React from 'react';
 import { Store, StoreShape } from './store';
-import { connect } from 'react-redux'
-import { handleClick } from './example.duck'
+import { connect, MapStateToProps } from 'react-redux'
+import { handleClick, getRemoteResource } from './example.duck'
 
-export interface AppProps {
-    store: StoreShape,
-    onClick: any
+export interface AppStateProps {
+    greeting: string;
+    answer: number;
 }
+
+export interface AppDispatchProps {
+    onGreeting(): void;
+    onFetch(): void;
+}
+
+type AppProps = AppStateProps & AppDispatchProps
 
 export class AppStateless extends React.Component<AppProps, {}>{
     constructor(props: AppProps) { super(props) }
     render() {
-        const greeting = this.props.store.featureOne.greet;
-        const handler = this.props.onClick;
+        const {
+            greeting,
+            answer,
+            onGreeting,
+            onFetch
+        } = this.props;
 
         return <div>
             <div>Hello, {greeting}</div>
-            <button onClick={handler}>Click Here</button>
+            <button onClick={onGreeting}>Click Here</button>
+            <div>The answer is {answer}.</div>
+            <button onClick={onFetch}>Fetch</button>
         </div>
     }
 }
 
-const mapStateToProps = (state: StoreShape) => ({ store: state });
+const mapStateToProps: MapStateToProps<AppStateProps, {}> = (state: StoreShape) => ({
+    greeting: state.featureOne.greet,
+    answer: state.featureOne.answer
+});
+
 const dispatchMap = {
-    onClick: handleClick
+    onGreeting: handleClick,
+    onFetch: getRemoteResource
 }
 
-export const App = connect(mapStateToProps, dispatchMap)(AppStateless)
+export const App = connect<AppStateProps, AppDispatchProps, {}>(mapStateToProps, dispatchMap)(AppStateless)
