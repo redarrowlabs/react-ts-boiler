@@ -5,6 +5,9 @@ import { App } from './app';
 import { Provider } from 'react-redux';
 import { Store } from './store';
 
+import './styles/styles.css';
+import './styles/sass-styles.scss';
+
 const rootEl = document.getElementById('root');
 ReactDOM.render(
     <AppContainer>

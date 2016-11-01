@@ -1,31 +1,16 @@
 const webpack = require("webpack");
 const path = require('path');
 const DashPlugin = require('webpack-dashboard/plugin');
+const Build = require('./build.config');
 
 const entry = [
     "./src/index.tsx",
 ];
 
-const outputPath = path
-        .join(__dirname, 'dist')
-        //Windows bug in node regarding file casing
-        //causes incorrect warnings.
-        //https://github.com/webpack/webpack/issues/2362
-        .replace(/^([A-Z]:)/, v => v.toUpperCase())
-
-console.log(outputPath)
-
 const output = {
-    path: outputPath,
+    path: Build.outputPath,
     filename: "bundle.js",
     publicPath: "/static/",
-}
-
-const typescript = {
-    test: /\.tsx?$/,
-    loaders: [
-        "ts-loader"
-    ],
 }
 
 module.exports = {
@@ -34,16 +19,10 @@ module.exports = {
 
     // Enable sourcemaps for debugging webpack's output.
     devtool: "source-map",
-
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx", ".js"]
     },
-
-    plugins: [
-    ],
-
-    module: {
-        loaders: [typescript]
-    }
+    plugins: [],
+    module: { loaders: Build.loaders }
 };
