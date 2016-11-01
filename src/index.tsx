@@ -16,8 +16,9 @@ ReactDOM.render(
 );
 
 // Hot Module Replacement API
-if (module.hot) {
-    module.hot.accept('./app', () => {
+const mod = module as any;
+if (mod.hot) {
+    mod.hot.accept('./app', () => {
         const NextApp = require('./app').App;
         ReactDOM.render(
             <AppContainer>
