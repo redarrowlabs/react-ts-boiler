@@ -1,0 +1,4 @@
+--require ts-babel-node/register
+--watch
+--reporter nyan
+src/**/*.spec.ts

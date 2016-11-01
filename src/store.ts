@@ -19,7 +19,7 @@ function initialState(): StoreShape {
 }
 
 function makeStore() {
-    const win = window as any;
+    const win = typeof window !== 'undefined' ? window as any : {};
     const composeEnhancers = win.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     const state = initialState();
 
