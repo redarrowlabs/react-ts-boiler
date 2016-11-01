@@ -7,5 +7,5 @@ describe('example', () => {
         const state = rootReducer(prev, action);
         const expected = { featureOne: { greet: 'Red Arrow', answer: 0 } };
         state.should.deep.equal(expected);
-    })
-})
+    });
+});

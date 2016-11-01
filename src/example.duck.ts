@@ -4,7 +4,7 @@ import { GetState } from './store';
 import { fetchMyRemoteResource } from './hub';
 
 //Actions
-const BUTTON_CLICK = 'redarrowlabs/BUTTON_CLICK'
+const BUTTON_CLICK = 'redarrowlabs/BUTTON_CLICK';
 
 const GET_RESOURCE_PENDING = 'redarrowlabs/GET_RESOURCE_PENDING';
 const GET_RESOURCE_SUCCESS = 'redarrowlabs/GET_RESOURCE_SUCCESS';
@@ -19,9 +19,9 @@ export interface FeatureOne {
 //Reducer
 export function initialState(): FeatureOne {
     return {
-        greet: "World",
-        answer: 0
-    }
+        greet: 'World',
+        answer: 0,
+    };
 }
 
 //TODO typed actions
@@ -30,24 +30,24 @@ export function featureOneReducer(prev = initialState(), action: any) {
         case BUTTON_CLICK: {
             return {
                 greet: 'Red Arrow',
-                answer: prev.answer
-            }
+                answer: prev.answer,
+            };
         }
         case GET_RESOURCE_SUCCESS: {
             return {
                 greet: prev.greet,
-                answer: action.payload
-            }
+                answer: action.payload,
+            };
         }
+        default: return prev;
     }
-    return prev;
 }
 
 //Action Creators
 export function handleClick() {
     return {
-        type: BUTTON_CLICK
-    }
+        type: BUTTON_CLICK,
+    };
 }
 
 export function getRemoteResource() {
@@ -58,29 +58,29 @@ export function getRemoteResource() {
         const res = await fetchMyRemoteResource();
 
         if (!res.success) {
-            dispatch(getRemoteResourceFailure())
+            dispatch(getRemoteResourceFailure());
             return;
         }
 
-        dispatch(getRemoteResourceSuccess(res.data))
-    }
+        dispatch(getRemoteResourceSuccess(res.data));
+    };
 }
 
 export function getRemoteResourcePending() {
     return {
-        type: GET_RESOURCE_PENDING
-    }
+        type: GET_RESOURCE_PENDING,
+    };
 }
 
 export function getRemoteResourceSuccess(data: number) {
     return {
         type: GET_RESOURCE_SUCCESS,
-        payload: data
-    }
+        payload: data,
+    };
 }
 
 export function getRemoteResourceFailure() {
     return {
-        type: GET_RESOURCE_FAILURE
-    }
+        type: GET_RESOURCE_FAILURE,
+    };
 }
