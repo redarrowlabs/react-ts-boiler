@@ -26,9 +26,9 @@ export class AppStateless extends React.Component<AppProps, {}> {
         } = this.props;
 
         return <div>
-            <div>Hello, {greeting}</div>
+            <div className='blurb'>Hello, {greeting}</div>
             <button onClick={onGreeting}>Click Here</button>
-            <div>The answer is {answer}.</div>
+            <div className='blurb'>The answer is {answer}.</div>
             <button onClick={onFetch}>Fetch</button>
         </div>;
     }

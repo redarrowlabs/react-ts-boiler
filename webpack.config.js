@@ -1,6 +1,6 @@
 const webpack = require("webpack");
-const path = require('path');
 const DashPlugin = require('webpack-dashboard/plugin');
+const Build = require('./build.config');
 
 const entry = [
     "react-hot-loader/patch",
@@ -9,26 +9,10 @@ const entry = [
     "./src/index.tsx",
 ];
 
-const outputPath = path
-        .join(__dirname, 'dist')
-        //Windows bug in node regarding file casing
-        //causes incorrect warnings.
-        //https://github.com/webpack/webpack/issues/2362
-        .replace(/^([A-Z]:)/, v => v.toUpperCase())
-
-console.log(outputPath)
-
 const output = {
-    path: outputPath,
+    path: Build.outputPath,
     filename: "bundle.js",
     publicPath: "/static/",
-}
-
-const typescript = {
-    test: /\.tsx?$/,
-    loaders: [
-        "ts-loader"
-    ],
 }
 
 module.exports = {
@@ -47,8 +31,5 @@ module.exports = {
         new webpack.HotModuleReplacementPlugin(),
         new DashPlugin({ port: 3001 })
     ],
-
-    module: {
-        loaders: [typescript]
-    }
+    module: { loaders: Build.loaders }
 };
