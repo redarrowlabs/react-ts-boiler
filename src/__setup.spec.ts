@@ -1,3 +1,4 @@
+// tslint:disable-next-line
 /// <reference path="../node_modules/@types/mocha/index.d.ts" />
 // ^ Mocha can't find it's own references for some reason.
 

@@ -5,7 +5,6 @@ export async function fetchMyRemoteResource() {
     return { success: true, data: 42 };
 }
 
-
 function delay(ms: number) {
     return new Promise<{}>((res, rej) => setTimeout(res, ms));
 }

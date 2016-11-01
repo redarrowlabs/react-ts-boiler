@@ -1,0 +1,27 @@
+{
+    "extends": [
+        "tslint:latest"
+    ],
+    "rules": {
+        "quotemark": [
+            true,
+            "single"
+        ],
+        "comment-format": [
+            false
+        ],
+        "interface-name": [
+            false
+        ],
+        "ordered-imports": [
+            false
+        ],
+        "object-literal-sort-keys": false,
+        "member-access": [
+            false
+        ],
+        "no-console": [
+            false
+        ]
+    }
+}
