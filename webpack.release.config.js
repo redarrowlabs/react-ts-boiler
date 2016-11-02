@@ -13,6 +13,9 @@ const output = {
     publicPath: "/static/",
 }
 
+const uglify = new webpack.optimize.UglifyJsPlugin({ sourceMap: true });
+const dedupe = new webpack.optimize.DedupePlugin();
+
 module.exports = {
     entry,
     output,
@@ -23,6 +26,6 @@ module.exports = {
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx", ".js"]
     },
-    plugins: [],
+    plugins: [ uglify, dedupe ],
     module: { loaders: Build.loaders }
 };
