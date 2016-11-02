@@ -3,7 +3,28 @@
   "version": "0.0.1",
   "description": "An easy template to spin up new front end projects",
   "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "dev": "webpack-dashboard -p 3001 -- node server.js",
+    "release": "webpack --config webpack.release.config.js",
+    "test": "mocha --opts ts.mocha.opts",
+    "tdd": "mocha --opts ts.mocha.watch.opts",
+    "lint": "tslint src/**/*.ts",
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "dependencies": {
+    "@redarrowlabs/strongback-css": "0.0.1",
+    "@redarrowlabs/strongback-react": "0.0.18",
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "react-redux": "4.4.5",
+    "redux": "3.6.0",
+    "redux-thunk": "2.1.0"
+  },
   "devDependencies": {
+    "@kadira/storybook": "2.29.0",
     "@types/chai": "3.4.34",
     "@types/mocha": "2.2.32",
     "@types/node": "6.0.45",
@@ -28,24 +49,5 @@
     "webpack": "2.1.0-beta.25",
     "webpack-dashboard": "0.2.0",
     "webpack-dev-server": "2.1.0-beta.8"
-  },
-  "scripts": {
-    "build": "webpack --config webpack.config.js",
-    "dev": "webpack-dashboard -p 3001 -- node server.js",
-    "release": "webpack --config webpack.release.config.js",
-    "test": "mocha --opts ts.mocha.opts",
-    "tdd": "mocha --opts ts.mocha.watch.opts",
-    "lint": "tslint src/**/*.ts"
-  },
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "@redarrowlabs/strongback-css": "0.0.1",
-    "@redarrowlabs/strongback-react": "0.0.18",
-    "react": "15.3.2",
-    "react-dom": "15.3.2",
-    "react-redux": "4.4.5",
-    "redux": "3.6.0",
-    "redux-thunk": "2.1.0"
   }
 }
