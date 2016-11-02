@@ -9,7 +9,7 @@ const outputPath = path
 
 const typescript = {
     test: /\.tsx?$/,
-    loaders: ["ts-loader"],
+    loaders: ['ts-loader'],
 }
 
 const css = {
@@ -29,12 +29,12 @@ const gif = {
 
 const woff = {
      test: /\.woff(2)?(\?v=[0-9].[0-9].[0-9])?$/, 
-     loader: "url-loader?mimetype=application/font-woff"
+     loader: 'url-loader?mimetype=application/font-woff'
 }
 
 const ttf = {
     test: /\.(ttf|eot|svg)(\?v=[0-9].[0-9].[0-9])?$/, 
-    loader: "url-loader"
+    loader: 'url-loader'
 }
 
 module.exports = {
