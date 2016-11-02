@@ -12,7 +12,8 @@
     "test": "mocha --opts ts.mocha.opts",
     "tdd": "mocha --opts ts.mocha.watch.opts",
     "lint": "tslint src/**/*.ts",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "ci": "npm run lint && npm run test && npm run release"
   },
   "dependencies": {
     "@redarrowlabs/strongback-css": "0.0.1",
