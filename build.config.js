@@ -9,7 +9,7 @@ const outputPath = path
 
 const typescript = {
     test: /\.tsx?$/,
-    loaders: ['ts-loader'],
+    loaders: ['babel', 'ts-loader'],
 }
 
 const css = {
