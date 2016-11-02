@@ -1,7 +1,7 @@
-import {configure} from '@kadira/storybook';
+import { configure } from '@kadira/storybook';
 
 function loadStories() {
-    require('../src/example.story.tsx');
+    require('../src/introduction/intro.story.tsx');
     // require as many stories as you need.
 }
 

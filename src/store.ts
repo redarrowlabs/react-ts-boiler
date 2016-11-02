@@ -1,22 +1,39 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import { featureOneReducer, FeatureOne, initialState as f1InitialState } from './example.duck';
+import {
+    createStore,
+    combineReducers,
+    applyMiddleware,
+    compose,
+} from 'redux';
+
 import thunk from 'redux-thunk';
 
+import {
+    featureNameReducer,
+    FeatureName,
+    initialState as introInitialState,
+} from './introduction/intro.duck';
+
+//===========
+// Interface
+//===========
 export interface StoreShape {
-    featureOne: FeatureOne;
+    intro: FeatureName;
 }
-
-const allReducers = {
-    featureOne: featureOneReducer,
-};
-
-export const rootReducer = combineReducers<StoreShape>(allReducers);
 
 function initialState(): StoreShape {
     return {
-        featureOne: f1InitialState(),
+        intro: introInitialState(),
     };
 }
+
+//==========
+// Reducers
+//==========
+const allReducers = {
+    intro: featureNameReducer,
+};
+
+export const rootReducer = combineReducers<StoreShape>(allReducers);
 
 function makeStore() {
     const win = typeof window !== 'undefined' ? window as any : {};
