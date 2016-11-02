@@ -1,5 +1,10 @@
 $brand: rebeccapurple;
 
+html {
+    font-family: sans-serif;
+    font-size: 1.5em;
+}
+
 .blurb {
     border-left: solid 3px $brand;
     padding: 0.5em;
