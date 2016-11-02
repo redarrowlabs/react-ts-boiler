@@ -1,21 +1,21 @@
 //============
 // Interfaces
 //============
-export interface FeatureName {
+export interface Introduction {
     myProperty: string;
 }
 
 //=========
 // Reducer
 //=========
-export function initialState(): FeatureName {
+export function initialState(): Introduction {
     return {
         myProperty: 'not clicked',
     };
 }
 
 //TODO typed actions
-export function featureNameReducer(prev = initialState(), action: any) {
+export function introReducer(prev = initialState(), action: any) {
     switch (action.type) {
         case TEST_REDUX: {
             return {

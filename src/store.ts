@@ -8,8 +8,8 @@ import {
 import thunk from 'redux-thunk';
 
 import {
-    featureNameReducer,
-    FeatureName,
+    introReducer,
+    Introduction,
     initialState as introInitialState,
 } from './introduction/intro.duck';
 
@@ -17,7 +17,7 @@ import {
 // Interface
 //===========
 export interface StoreShape {
-    intro: FeatureName;
+    intro: Introduction;
 }
 
 function initialState(): StoreShape {
@@ -30,7 +30,7 @@ function initialState(): StoreShape {
 // Reducers
 //==========
 const allReducers = {
-    intro: featureNameReducer,
+    intro: introReducer,
 };
 
 export const rootReducer = combineReducers<StoreShape>(allReducers);
