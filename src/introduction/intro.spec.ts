@@ -1,12 +1,13 @@
-import { rootReducer } from '../store';
+import { rootReducer, initialState } from '../store';
 import { TEST_REDUX } from './intro.duck';
 
 describe('introduction', () => {
     it('demos redux', () => {
-        const prev = { intro: { myProperty: 'not clicked' } };
+        const prev = initialState();
         const action = { type: TEST_REDUX };
         const next = rootReducer(prev, action);
         const expected = { intro: { myProperty: 'clicked' } };
-        next.should.deep.equal(expected);
+
+        next.intro.should.deep.equal(expected.intro);
     });
 });

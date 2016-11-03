@@ -6,6 +6,7 @@ import {
 } from 'redux';
 
 import thunk from 'redux-thunk';
+import { routerReducer } from 'react-router-redux';
 
 import {
     introReducer,
@@ -18,11 +19,13 @@ import {
 //===========
 export interface StoreShape {
     intro: Introduction;
+    routing: any; //react-router-redux implements this
 }
 
-function initialState(): StoreShape {
+export function initialState(): StoreShape {
     return {
         intro: introInitialState(),
+        routing: undefined,
     };
 }
 
@@ -31,6 +34,7 @@ function initialState(): StoreShape {
 //==========
 const allReducers = {
     intro: introReducer,
+    routing: routerReducer,
 };
 
 export const rootReducer = combineReducers<StoreShape>(allReducers);
