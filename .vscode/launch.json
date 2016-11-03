@@ -5,14 +5,14 @@
             "name": "Launch",
             "type": "node",
             "request": "launch",
+            "preLaunchTask": "Build Tests",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
             "stopOnEntry": false,
             "args": [
-                "--opts", "ts.mocha.opts",
-                "--no-timeouts"
+                "--no-timeouts",
+                "bin-test/**/*.spec.js"
             ],
             "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
             "runtimeExecutable": null,
             "runtimeArgs": [
                 "--nolazy"
@@ -21,8 +21,9 @@
                 "NODE_ENV": "development"
             },
             "console": "internalConsole",
-            "sourceMaps": false,
-            "outFiles": []
+            "sourceMaps": true,
+            "outFiles": [],
+            "outDir": "${workspaceRoot}/bin-test"
         }
     ]
 }
