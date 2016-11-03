@@ -5,7 +5,7 @@ export class App extends React.Component<{}, {}> {
 
     render() {
         return <div>
-            <nav>Navigation</nav>
+            <nav>The Best Application</nav>
             <main>
                 {this.props.children}
             </main>
