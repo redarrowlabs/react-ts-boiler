@@ -1,8 +1,27 @@
-$brand: rebeccapurple;
+// Example styles... go ahead and trash 'em.
+
+$brand: #BA0C2F;
+
+* + * {
+    margin-top: 1em;
+}
 
 html {
     font-family: sans-serif;
-    font-size: 1.5em;
+}
+
+body {
+    margin: 0em;
+}
+
+nav {
+    background-color: $brand;
+    color: white;
+    padding: 0.75em;
+}
+
+main {
+    margin-left: 1em;
 }
 
 .blurb {
