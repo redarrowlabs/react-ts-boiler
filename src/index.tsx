@@ -8,8 +8,10 @@ import { IntroController } from './introduction/intro.controller';
 import { App } from './app';
 import { Store } from './store';
 
+import 'sweetalert2/dist/sweetalert2.css';
 import './styles/styles.css';
 import './styles/sass-styles.scss';
+import './errors';
 
 const rootEl = document.getElementById('root');
 const history = syncHistoryWithStore(browserHistory, Store);
