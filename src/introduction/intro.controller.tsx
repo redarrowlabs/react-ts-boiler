@@ -45,7 +45,7 @@ export class IntroControllerStateless extends React.Component<IntroControllerPro
             </div>
             <h2>Kick the Tires</h2>
             <div className='blurb'>
-                <div>You can this page with the Redux and React devtools. Go on, try it.</div>
+                <div>You can inspect this page with the Redux and React devtools. Go on, try it.</div>
                 <Sample
                     title='Value of myProperty'
                     value={this.props.myProperty}
