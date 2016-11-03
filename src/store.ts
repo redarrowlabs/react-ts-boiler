@@ -7,6 +7,7 @@ import {
 
 import thunk from 'redux-thunk';
 import { routerReducer } from 'react-router-redux';
+import { getWindow } from './window';
 
 import {
     introReducer,
@@ -40,14 +41,15 @@ const allReducers = {
 export const rootReducer = combineReducers<StoreShape>(allReducers);
 
 function makeStore() {
-    const win = typeof window !== 'undefined' ? window as any : {};
+    const win = getWindow();
     const composeEnhancers = win.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
     const state = initialState();
+    const enhancers = composeEnhancers(applyMiddleware(thunk));
 
-    return createStore<StoreShape>(rootReducer, state,
-        composeEnhancers(
-            applyMiddleware(thunk)
-        )
+    return createStore<StoreShape>(
+        rootReducer,
+        state,
+        enhancers
     );
 }
 

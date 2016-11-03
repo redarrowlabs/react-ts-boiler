@@ -50,6 +50,8 @@ export class IntroControllerStateless extends React.Component<IntroControllerPro
                     title='Value of myProperty'
                     value={this.props.myProperty}
                     onClick={this.props.onClick} />
+                <div>Sometimes there are bugs...</div>
+                <button onClick={() => {throw new Error('oh no a bug');}}>See It</button>
             </div>
             <h2>Time to Change the World</h2>
             <div className='blurb'>

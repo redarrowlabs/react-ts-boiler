@@ -20,7 +20,9 @@ module.exports = {
     output,
 
     // Enable sourcemaps for debugging webpack's output.
-    devtool: "eval-source-map",
+    // Don't change this to eval-source-map -- uncaught errors
+    // have no call stack when evaled
+    devtool: "source-map",
 
     resolve: {
         // Add '.ts' and '.tsx' as resolvable extensions.
