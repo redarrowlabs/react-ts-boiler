@@ -17,7 +17,7 @@
     "build-for-tests": "tsc --project tsconfig.json --outDir bin-test"
   },
   "dependencies": {
-    "@redarrowlabs/strongback-css": "0.0.1",
+    "@redarrowlabs/strongback-css": "0.0.4",
     "@redarrowlabs/strongback-react": "0.0.18",
     "doop": "2.2.1",
     "react": "15.3.2",
