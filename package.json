@@ -1,6 +1,6 @@
 {
   "name": "@redarrowlabs/react-ts-boiler",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "An easy template to spin up new front end projects",
   "main": "index.js",
   "author": "",
