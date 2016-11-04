@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 const path = require('path');
 const DashPlugin = require('webpack-dashboard/plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 const Build = require('./build.config');
 
 const entry = [
@@ -10,11 +11,15 @@ const entry = [
 const output = {
     path: Build.outputPath,
     filename: "bundle.js",
-    publicPath: "/static/",
+    publicPath: "/",
 }
 
 const uglify = new webpack.optimize.UglifyJsPlugin({ sourceMap: true });
 const dedupe = new webpack.optimize.DedupePlugin();
+const html = new HtmlPlugin({
+    hash: true,
+    template: 'src/template.ejs'
+});
 
 module.exports = {
     entry,
@@ -26,6 +31,6 @@ module.exports = {
         // Add '.ts' and '.tsx' as resolvable extensions.
         extensions: [".ts", ".tsx", ".js"]
     },
-    plugins: [ uglify, dedupe ],
+    plugins: [uglify, dedupe, html],
     module: { loaders: Build.loaders }
 };
