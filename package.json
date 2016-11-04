@@ -19,6 +19,7 @@
   "dependencies": {
     "@redarrowlabs/strongback-css": "0.0.1",
     "@redarrowlabs/strongback-react": "0.0.18",
+    "doop": "2.2.1",
     "react": "15.3.2",
     "react-dom": "15.3.2",
     "react-icons": "2.2.1",
