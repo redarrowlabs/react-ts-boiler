@@ -4,6 +4,10 @@ import { connect, MapStateToProps } from 'react-redux';
 import { doActionOne } from './intro.duck';
 import { Sample } from './sample';
 
+const FaBeer = require('react-icons/lib/fa/beer');
+const FaMapO = require('react-icons/lib/fa/map-o');
+const FaLineChart = require('react-icons/lib/fa/line-chart');
+
 export interface IntroControllerStateProps {
     myProperty: string;
 };
@@ -51,7 +55,9 @@ export class IntroControllerStateless extends React.Component<IntroControllerPro
                     value={this.props.myProperty}
                     onClick={this.props.onClick} />
                 <div>Sometimes there are bugs...</div>
-                <button onClick={() => {throw new Error('oh no a bug');}}>See It</button>
+                <button onClick={() => { throw new Error('oh no a bug'); } }>See It</button>
+                <div>Icons are in, these days:</div>
+                <div><FaBeer /><FaMapO /><FaLineChart /></div>
             </div>
             <h2>Time to Change the World</h2>
             <div className='blurb'>
