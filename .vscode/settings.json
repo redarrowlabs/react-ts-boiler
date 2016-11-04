@@ -1,5 +1,10 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "typescript.tsdk": "node_modules/typescript/lib",
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe"
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\sysnative\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "dist": true
+    }
 }

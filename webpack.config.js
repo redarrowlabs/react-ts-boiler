@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const DashPlugin = require('webpack-dashboard/plugin');
+const HtmlPlugin = require('html-webpack-plugin');
 const Build = require('./build.config');
 
 const entry = [
@@ -12,7 +13,7 @@ const entry = [
 const output = {
     path: Build.outputPath,
     filename: "bundle.js",
-    publicPath: "/static/",
+    publicPath: "/",
 }
 
 module.exports = {
@@ -31,7 +32,11 @@ module.exports = {
 
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new DashPlugin({ port: 3001 })
+        new DashPlugin({ port: 3001 }),
+        new HtmlPlugin({
+            hash: true,
+            template: 'src/template.ejs'
+        })
     ],
     module: { loaders: Build.loaders }
 };
