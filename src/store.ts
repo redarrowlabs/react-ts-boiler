@@ -25,7 +25,7 @@ export interface StoreShape {
 
 export function initialState(): StoreShape {
     return {
-        intro: introInitialState(),
+        intro: introInitialState,
         routing: undefined,
     };
 }
@@ -55,3 +55,10 @@ function makeStore() {
 
 export const Store = makeStore();
 export type GetState = () => StoreShape;
+
+/**
+ * Turn a complex model into a plain old javascript object.
+ */
+export function toJS(target: Object) {
+    return JSON.parse(JSON.stringify(target));
+}

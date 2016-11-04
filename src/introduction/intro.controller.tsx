@@ -83,7 +83,7 @@ export class IntroControllerStateless extends React.Component<IntroControllerPro
 }
 
 const stateToProps: MapStateToProps<IntroControllerStateProps, {}> = (state: StoreShape) => ({
-    myProperty: state.intro.myProperty,
+    myProperty: state.intro.myProperty(),
 });
 
 const dispatches = {

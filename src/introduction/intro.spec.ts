@@ -1,4 +1,4 @@
-import { rootReducer, initialState } from '../store';
+import { rootReducer, initialState, toJS } from '../store';
 import { TEST_REDUX } from './intro.duck';
 
 describe('introduction', () => {
@@ -8,6 +8,6 @@ describe('introduction', () => {
         const next = rootReducer(prev, action);
         const expected = { intro: { myProperty: 'clicked' } };
 
-        next.intro.should.deep.equal(expected.intro);
+        toJS(next).intro.should.deep.equal(expected.intro);
     });
 });

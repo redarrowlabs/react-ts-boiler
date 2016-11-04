@@ -25,7 +25,7 @@ export class NameControllerStateless extends React.Component<NameControllerProps
 }
 
 const stateToProps: MapStateToProps<NameControllerStateProps, {}> = (state: StoreShape) => ({
-    myProperty: 'TODO', //state.feature.myProperty
+    myProperty: 'TODO', //state.feature.myProperty()
 });
 
 const dispatches = {

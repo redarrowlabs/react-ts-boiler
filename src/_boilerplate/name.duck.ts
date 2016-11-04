@@ -5,31 +5,31 @@ import { fetchRemoteResource } from './name.hub';
 //============
 // Interfaces
 //============
-export interface FeatureName {
-    myProperty: string;
+import { doop, field } from 'doop';
+
+@doop
+export class FeatureName {
+    @doop
+    get myProperty() { return field<string, this>('todo'); }
+    @doop
+    get anotherProperty() { return field<string, this>('todo'); }
 }
 
 //=========
 // Reducer
 //=========
-export function initialState(): FeatureName {
-    return {
-        myProperty: 'todo',
-    };
-}
+export const initialState = new FeatureName();
 
 //TODO typed actions
-export function featureNameReducer(prev = initialState(), action: any) {
+export function featureNameReducer(prev = initialState, action: any): FeatureName {
     switch (action.type) {
         case ACTION_1: {
-            return {
-                myProperty: 'next',
-            };
+            return prev.myProperty('next');
         }
         case ASYNC_ACTION_SUCCESS: {
-            return {
-                myProperty: action.data,
-            };
+            return prev
+                .myProperty(action.data)
+                .anotherProperty('success');
         }
         default: return prev;
     }
