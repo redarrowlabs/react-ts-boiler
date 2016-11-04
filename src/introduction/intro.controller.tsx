@@ -3,6 +3,7 @@ import { StoreShape } from '../store';
 import { connect, MapStateToProps } from 'react-redux';
 import { doActionOne } from './intro.duck';
 import { Sample } from './sample';
+import { Button } from '@redarrowlabs/strongback-react';
 
 const FaBeer = require('react-icons/lib/fa/beer');
 const FaMapO = require('react-icons/lib/fa/map-o');
@@ -55,7 +56,7 @@ export class IntroControllerStateless extends React.Component<IntroControllerPro
                     value={this.props.myProperty}
                     onClick={this.props.onClick} />
                 <div>Sometimes there are bugs...</div>
-                <button onClick={() => { throw new Error('oh no a bug'); } }>See It</button>
+                <Button onClick={() => { throw new Error('oh no a bug'); } }>See It</Button>
                 <div>Icons are in, these days:</div>
                 <div><FaBeer /><FaMapO /><FaLineChart /></div>
             </div>

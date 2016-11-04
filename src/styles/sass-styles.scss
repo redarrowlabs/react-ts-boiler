@@ -2,21 +2,9 @@
 
 $brand: #BA0C2F;
 
-main * + * {
-    margin-top: 1em;
-}
-
 svg + svg {
     margin-top: 0em;
     margin-left: 1em;
-}
-
-html {
-    font-family: sans-serif;
-}
-
-body {
-    margin: 0em;
 }
 
 nav {
@@ -41,4 +29,5 @@ main {
 .blurb {
     border-left: solid 3px $brand;
     padding: 0.5em;
+    padding-left: 1em;
 }

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Button } from '@redarrowlabs/strongback-react';
 
 export interface SampleProps {
     title: string;
@@ -15,7 +16,7 @@ export class Sample extends React.Component<SampleProps, {}> {
 
         return <div>
             <div><code>{title}: {value}</code></div>
-            <button onClick={this.props.onClick}>Click Here</button>
+            <Button onClick={this.props.onClick}>Click Here</Button>
         </div>;
     }
 }
