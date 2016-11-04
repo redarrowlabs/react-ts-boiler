@@ -6,6 +6,11 @@ main * + * {
     margin-top: 1em;
 }
 
+svg + svg {
+    margin-top: 0em;
+    margin-left: 1em;
+}
+
 html {
     font-family: sans-serif;
 }
