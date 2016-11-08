@@ -1,3 +1,3 @@
 declare module 'sweetalert2'{
-    export = {} as Function;
+    export = {} as any;
 }

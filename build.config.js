@@ -37,7 +37,17 @@ const ttf = {
     loader: 'url-loader'
 }
 
+const loaderMap = {
+    "typescript": typescript,
+    "sass": sass,
+    "css": css,
+    "gif": gif,
+    "woff": woff,
+    "ttf": ttf
+}
+
 module.exports = {
-    loaders: [typescript, sass, css, gif, woff, ttf],
+    loaders: Object.keys(loaderMap).map(x => loaderMap[x]),
+    loaderMap,
     outputPath
 }
