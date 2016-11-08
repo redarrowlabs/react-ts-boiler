@@ -15,17 +15,25 @@ import {
     initialState as introInitialState,
 } from './introduction/intro.duck';
 
+import {
+    errorReducer,
+    UnexpectedError,
+    initialState as errorInitialState,
+} from './error/error.duck';
+
 //===========
 // Interface
 //===========
 export interface StoreShape {
     intro: Introduction;
+    error: UnexpectedError;
     routing: any; //react-router-redux implements this
 }
 
 export function initialState(): StoreShape {
     return {
         intro: introInitialState,
+        error: errorInitialState,
         routing: undefined,
     };
 }
@@ -36,6 +44,7 @@ export function initialState(): StoreShape {
 const allReducers = {
     intro: introReducer,
     routing: routerReducer,
+    error: errorReducer,
 };
 
 export const rootReducer = combineReducers<StoreShape>(allReducers);
